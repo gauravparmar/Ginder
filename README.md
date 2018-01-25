@@ -1,12 +1,12 @@
-Tinder Swipe Cards Using Ionic3
+Ginder
 ================================
 
-Minimalistic Ionic3 App with swipeable cards as in Tinder App using ng2-swipe-cards module with event logs and throw direction customization. 
+Minimalistic Ionic3 App with swipeable cards as in Tinder App using ng2-swipe-cards module.
 
 ### Author Information ###
 
 Author : Gaurav Parmar
 
-Email : gauravparmariam@gmail.com
+Website : https://gauravparmar.github.io/
 
 
