@@ -49,20 +49,53 @@ export class HomePage {
           });
       }
   }
-
+  
   like(like) {
       var self = this;
       if (this.cards.length > 0) {
-          self.cards[this.cardCursor++].likeEvent.emit({ like });
+          var item =self.cards[this.cardCursor++];
+          item.likeEvent.emit({ like });
           // DO STUFF WITH YOUR CARD
+        //   var item = this.cards[this.cardCursor-1];
+        //   console.log('You clicked '+this.simpleStringify(item));
+        //   console.log(like);
+          if(like){
+            console.log('You liked '+this.simpleStringify(item));
+          }else{
+            console.log('You disliked '+this.simpleStringify(item));
+          }
           this.tinderCardLogs.push("callLike(" + JSON.stringify({ like }) + ")");
           this.scrollToBottom(this.tinderCardLogContainer);
       }
   }
 
+  simpleStringify (object){
+    var simpleObject = {};
+    for (var prop in object ){
+        if (!object.hasOwnProperty(prop)){
+            continue;
+        }
+        if (typeof(object[prop]) == 'object'){
+            continue;
+        }
+        if (typeof(object[prop]) == 'function'){
+            continue;
+        }
+        simpleObject[prop] = object[prop];
+    }
+    return JSON.stringify(simpleObject); // returns cleaned up JSON
+};
+
   onCardLike(event) {
       var item = this.cards[this.cardCursor++];
       // DO STUFF WITH YOUR CARD
+    //   console.log('You swiped '+this.simpleStringify(item));
+    //   console.log(event.like);
+      if(event.like){
+        console.log('You liked '+this.simpleStringify(item));
+      }else{
+        console.log('You disliked '+this.simpleStringify(item));
+      }
       this.tinderCardLogs.push("onLike(" + JSON.stringify(event) + ")");
       this.scrollToBottom(this.tinderCardLogContainer);
   }

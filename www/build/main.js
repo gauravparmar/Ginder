@@ -34,7 +34,7 @@ var ChatsPage = (function () {
     };
     ChatsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-chats',template:/*ion-inline-start:"C:\xampp\htdocs\github\ginder2\src\pages\chats\chats.html"*/'<!--\n  Generated template for the ChatsPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<!-- <ion-header>\n\n  <ion-navbar>\n    <ion-title>chats</ion-title>\n  </ion-navbar>\n\n</ion-header> -->\n\n\n<ion-content padding>\n  Chats\n</ion-content>\n'/*ion-inline-end:"C:\xampp\htdocs\github\ginder2\src\pages\chats\chats.html"*/,
+            selector: 'page-chats',template:/*ion-inline-start:"C:\xampp\htdocs\github\Ginder\src\pages\chats\chats.html"*/'<!--\n\n  Generated template for the ChatsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<!-- <ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>chats</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header> -->\n\n\n\n\n\n<ion-content padding>\n\n  Chats\n\n</ion-content>\n\n'/*ion-inline-end:"C:\xampp\htdocs\github\Ginder\src\pages\chats\chats.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], ChatsPage);
@@ -79,7 +79,7 @@ var ProfilePage = (function () {
     };
     ProfilePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-profile',template:/*ion-inline-start:"C:\xampp\htdocs\github\ginder2\src\pages\profile\profile.html"*/'<!--\n  Generated template for the ProfilePage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<!-- <ion-header>\n\n  <ion-navbar>\n    <ion-title>profile</ion-title>\n  </ion-navbar>\n\n</ion-header> -->\n\n\n<ion-content padding>\n  Profile page\n</ion-content>\n'/*ion-inline-end:"C:\xampp\htdocs\github\ginder2\src\pages\profile\profile.html"*/,
+            selector: 'page-profile',template:/*ion-inline-start:"C:\xampp\htdocs\github\Ginder\src\pages\profile\profile.html"*/'<!--\n\n  Generated template for the ProfilePage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<!-- <ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>profile</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header> -->\n\n\n\n\n\n<ion-content padding>\n\n  Profile page\n\n</ion-content>\n\n'/*ion-inline-end:"C:\xampp\htdocs\github\Ginder\src\pages\profile\profile.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], ProfilePage);
@@ -183,7 +183,7 @@ var TabsPage = (function () {
     };
     TabsPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-tabs',template:/*ion-inline-start:"C:\xampp\htdocs\github\ginder2\src\pages\tabs\tabs.html"*/'<ion-tabs>\n  <ion-tab [root]="tab1Root"  tabIcon="flash"></ion-tab>\n  <ion-tab [root]="tab2Root"  tabIcon="chatbubbles"></ion-tab>\n  <ion-tab [root]="tab3Root"  tabIcon="contact"></ion-tab>\n</ion-tabs>'/*ion-inline-end:"C:\xampp\htdocs\github\ginder2\src\pages\tabs\tabs.html"*/,
+            selector: 'page-tabs',template:/*ion-inline-start:"C:\xampp\htdocs\github\Ginder\src\pages\tabs\tabs.html"*/'<ion-tabs>\n\n  <ion-tab [root]="tab1Root"  tabIcon="flash"></ion-tab>\n\n  <ion-tab [root]="tab2Root"  tabIcon="chatbubbles"></ion-tab>\n\n  <ion-tab [root]="tab3Root"  tabIcon="contact"></ion-tab>\n\n</ion-tabs>'/*ion-inline-end:"C:\xampp\htdocs\github\Ginder\src\pages\tabs\tabs.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
     ], TabsPage);
@@ -241,15 +241,50 @@ var HomePage = (function () {
     HomePage.prototype.like = function (like) {
         var self = this;
         if (this.cards.length > 0) {
-            self.cards[this.cardCursor++].likeEvent.emit({ like: like });
+            var item = self.cards[this.cardCursor++];
+            item.likeEvent.emit({ like: like });
             // DO STUFF WITH YOUR CARD
+            //   var item = this.cards[this.cardCursor-1];
+            //   console.log('You clicked '+this.simpleStringify(item));
+            //   console.log(like);
+            if (like) {
+                console.log('You liked ' + this.simpleStringify(item));
+            }
+            else {
+                console.log('You disliked ' + this.simpleStringify(item));
+            }
             this.tinderCardLogs.push("callLike(" + JSON.stringify({ like: like }) + ")");
             this.scrollToBottom(this.tinderCardLogContainer);
         }
     };
+    HomePage.prototype.simpleStringify = function (object) {
+        var simpleObject = {};
+        for (var prop in object) {
+            if (!object.hasOwnProperty(prop)) {
+                continue;
+            }
+            if (typeof (object[prop]) == 'object') {
+                continue;
+            }
+            if (typeof (object[prop]) == 'function') {
+                continue;
+            }
+            simpleObject[prop] = object[prop];
+        }
+        return JSON.stringify(simpleObject); // returns cleaned up JSON
+    };
+    ;
     HomePage.prototype.onCardLike = function (event) {
         var item = this.cards[this.cardCursor++];
         // DO STUFF WITH YOUR CARD
+        //   console.log('You swiped '+this.simpleStringify(item));
+        //   console.log(event.like);
+        if (event.like) {
+            console.log('You liked ' + this.simpleStringify(item));
+        }
+        else {
+            console.log('You disliked ' + this.simpleStringify(item));
+        }
         this.tinderCardLogs.push("onLike(" + JSON.stringify(event) + ")");
         this.scrollToBottom(this.tinderCardLogContainer);
     };
@@ -285,7 +320,7 @@ var HomePage = (function () {
     ], HomePage.prototype, "tinderCardLogContainer", void 0);
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\xampp\htdocs\github\ginder2\src\pages\home\home.html"*/'<div class="left-panel">\n  <div class="card-container">\n      <sc-card\n        *ngFor="let card of cards;let i = index;"\n        [callDestroy]="card.destroyEvent"\n        [orientation]="orientation"\n        (onRelease)="onRelease($event)"\n        (onSwipe)="onSwipe($event)"\n        (onAbort)="onAbort($event)"\n        [tinder-card]="overlay"\n        [callLike]="card.likeEvent"\n        (onLike)="onCardLike($event)">\n        <div class="card-header">\n          <span>{{card.id}}</span>\n        </div>\n        <div class="card-content">\n          <img [src]="card.url" draggable="false"/>\n        </div>\n      </sc-card>\n  </div>\n  <div class="buttons">\n    <button (click)="like(false)">Dislike</button>\n    <button (click)="like(true)">Like</button>\n  </div>\n</div>\n<div class="right-panel">\n  <h2>Parameters</h2>\n  <h3>Card</h3>\n  <h4>orientation</h4>\n  <p>\n    <label>value</label>\n    <select name="orientation" [(ngModel)]="orientation">\n      <option>x</option>\n      <option>y</option>\n      <option>xy</option>\n    </select>\n  </p>\n  <h4>Event logs</h4>\n  <div class="log-container" #cardLog>\n    <span *ngFor="let log of cardLogs">{{log}}</span>\n  </div>\n  <h3>Tinder Card</h3>\n  <h4>overlay</h4>\n  <h5>like</h5>\n  <p>\n    <label>backgroundColor</label>\n    <input type="color" [(ngModel)]="overlay.like.backgroundColor" />\n  </p>\n  <h5>dislike</h5>\n  <p>\n    <label>backgroundColor</label>\n    <input type="color" [(ngModel)]="overlay.dislike.backgroundColor" />\n  </p>\n  <h4>Event logs</h4>\n  <div class="log-container" #tinderCardLog>\n    <span *ngFor="let log of tinderCardLogs">{{log}}</span>\n  </div>\n</div>\n'/*ion-inline-end:"C:\xampp\htdocs\github\ginder2\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\xampp\htdocs\github\Ginder\src\pages\home\home.html"*/'<div class="left-panel">\n\n  <div class="card-container">\n\n      <sc-card\n\n        *ngFor="let card of cards;let i = index;"\n\n        [callDestroy]="card.destroyEvent"\n\n        [orientation]="orientation"\n\n        (onRelease)="onRelease($event)"\n\n        (onSwipe)="onSwipe($event)"\n\n        (onAbort)="onAbort($event)"\n\n        [tinder-card]="overlay"\n\n        [callLike]="card.likeEvent"\n\n        (onLike)="onCardLike($event)">\n\n        <div class="card-header">\n\n          <span>{{card.id}}</span>\n\n        </div>\n\n        <div class="card-content">\n\n          <img [src]="card.url" draggable="false"/>\n\n        </div>\n\n      </sc-card>\n\n  </div>\n\n  <div class="buttons">\n\n    <button (click)="like(false)">Dislike</button>\n\n    <button (click)="like(true)">Like</button>\n\n  </div>\n\n</div>\n\n<div class="right-panel">\n\n  <h2>Parameters</h2>\n\n  <h3>Card</h3>\n\n  <h4>orientation</h4>\n\n  <p>\n\n    <label>value</label>\n\n    <select name="orientation" [(ngModel)]="orientation">\n\n      <option>x</option>\n\n      <option>y</option>\n\n      <option>xy</option>\n\n    </select>\n\n  </p>\n\n  <h4>Event logs</h4>\n\n  <div class="log-container" #cardLog>\n\n    <span *ngFor="let log of cardLogs">{{log}}</span>\n\n  </div>\n\n  <h3>Tinder Card</h3>\n\n  <h4>overlay</h4>\n\n  <h5>like</h5>\n\n  <p>\n\n    <label>backgroundColor</label>\n\n    <input type="color" [(ngModel)]="overlay.like.backgroundColor" />\n\n  </p>\n\n  <h5>dislike</h5>\n\n  <p>\n\n    <label>backgroundColor</label>\n\n    <input type="color" [(ngModel)]="overlay.dislike.backgroundColor" />\n\n  </p>\n\n  <h4>Event logs</h4>\n\n  <div class="log-container" #tinderCardLog>\n\n    <span *ngFor="let log of tinderCardLogs">{{log}}</span>\n\n  </div>\n\n</div>\n\n'/*ion-inline-end:"C:\xampp\htdocs\github\Ginder\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], HomePage);
@@ -432,7 +467,7 @@ var MyApp = (function () {
         });
     }
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\xampp\htdocs\github\ginder2\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n'/*ion-inline-end:"C:\xampp\htdocs\github\ginder2\src\app\app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"C:\xampp\htdocs\github\Ginder\src\app\app.html"*/'<ion-nav [root]="rootPage"></ion-nav>\n\n'/*ion-inline-end:"C:\xampp\htdocs\github\Ginder\src\app\app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
