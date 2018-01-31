@@ -4,51 +4,6 @@ webpackJsonp([2],{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatsPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(43);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the ChatsPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var ChatsPage = (function () {
-    function ChatsPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    ChatsPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad ChatsPage');
-    };
-    ChatsPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-chats',template:/*ion-inline-start:"C:\xampp\htdocs\github\Ginder\src\pages\chats\chats.html"*/'<!--\n\n  Generated template for the ChatsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<!-- <ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>chats</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header> -->\n\n\n\n\n\n<ion-content padding>\n\n  Chats\n\n</ion-content>\n\n'/*ion-inline-end:"C:\xampp\htdocs\github\Ginder\src\pages\chats\chats.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
-    ], ChatsPage);
-    return ChatsPage;
-}());
-
-//# sourceMappingURL=chats.js.map
-
-/***/ }),
-
-/***/ 148:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProfilePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(43);
@@ -90,6 +45,51 @@ var ProfilePage = (function () {
 
 /***/ }),
 
+/***/ 148:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChatsPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(43);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/**
+ * Generated class for the ChatsPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var ChatsPage = (function () {
+    function ChatsPage(navCtrl, navParams) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+    }
+    ChatsPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ChatsPage');
+    };
+    ChatsPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-chats',template:/*ion-inline-start:"C:\xampp\htdocs\github\Ginder\src\pages\chats\chats.html"*/'<!--\n\n  Generated template for the ChatsPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<!-- <ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>chats</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header> -->\n\n\n\n\n\n<ion-content padding>\n\n  Chats\n\n</ion-content>\n\n'/*ion-inline-end:"C:\xampp\htdocs\github\Ginder\src\pages\chats\chats.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavParams */]])
+    ], ChatsPage);
+    return ChatsPage;
+}());
+
+//# sourceMappingURL=chats.js.map
+
+/***/ }),
+
 /***/ 161:
 /***/ (function(module, exports) {
 
@@ -112,11 +112,11 @@ webpackEmptyAsyncContext.id = 161;
 
 var map = {
 	"../pages/chats/chats.module": [
-		676,
+		677,
 		1
 	],
 	"../pages/profile/profile.module": [
-		677,
+		676,
 		0
 	]
 };
@@ -144,8 +144,8 @@ module.exports = webpackAsyncContext;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(43);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__home_home__ = __webpack_require__(253);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__profile_profile__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chats_chats__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__profile_profile__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__chats_chats__ = __webpack_require__(148);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -200,8 +200,9 @@ var TabsPage = (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__ = __webpack_require__(393);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_Rx__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(674);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__ = __webpack_require__(393);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Rx___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Rx__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -212,10 +213,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+// For swipe cards
+
 
 /// For swipe cards
 var HomePage = (function () {
-    function HomePage() {
+    function HomePage(http) {
+        this.http = http;
         this.cards = [];
         this.cardCursor = 0;
         this.orientation = "x";
@@ -227,15 +231,17 @@ var HomePage = (function () {
                 backgroundColor: '#e92828'
             }
         };
-        for (var i = 0; i < 50; i++) {
-            this.cards.push({
-                id: i + 1,
-                likeEvent: new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */](),
-                destroyEvent: new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */](),
-                url: this.getKittenUrl()
-            });
-        }
+        this.addNewCards(10);
+        // for (var i = 0; i < 3; i++) {
+        //     this.cards.push({
+        //         id: i + 1,
+        //         likeEvent: new EventEmitter(),
+        //         destroyEvent: new EventEmitter(),
+        //         url: this.getKittenUrl()
+        //     });
+        // }
     }
+    //Called on pressing like/dislike icons each time
     HomePage.prototype.like = function (like) {
         var self = this;
         if (this.cards.length > 0) {
@@ -252,6 +258,7 @@ var HomePage = (function () {
                 console.log('You disliked ' + this.simpleStringify(item));
             }
         }
+        this.maintainCardBuffer();
     };
     HomePage.prototype.simpleStringify = function (object) {
         var simpleObject = {};
@@ -270,17 +277,19 @@ var HomePage = (function () {
         return JSON.stringify(simpleObject); // returns cleaned up JSON
     };
     ;
+    //Called on swiping cards each time
     HomePage.prototype.onCardLike = function (event) {
         var item = this.cards[this.cardCursor++];
         // DO STUFF WITH YOUR CARD
-        //   console.log('You swiped '+this.simpleStringify(item));
-        //   console.log(event.like);
+        console.log('You swiped ' + this.simpleStringify(item));
+        // console.log(event.like);
         if (event.like) {
             console.log('You liked ' + this.simpleStringify(item));
         }
         else {
             console.log('You disliked ' + this.simpleStringify(item));
         }
+        this.maintainCardBuffer();
     };
     HomePage.prototype.getKittenUrl = function () {
         var w = 500 - Math.floor((Math.random() * 100) + 1);
@@ -293,18 +302,42 @@ var HomePage = (function () {
     };
     HomePage.prototype.onSwipe = function (event) {
     };
-    HomePage.prototype.scrollToBottom = function (el) {
-        setTimeout(function () {
-            el.nativeElement.scrollTop = el.nativeElement.scrollHeight;
-        }, 100);
+    // scrollToBottom(el) {
+    //     setTimeout(() => {
+    //         el.nativeElement.scrollTop = el.nativeElement.scrollHeight;
+    //     }, 100);
+    // }
+    HomePage.prototype.addNewCards = function (count) {
+        var _this = this;
+        this.http.get('https://randomuser.me/api/?results=' + count)
+            .map(function (data) { return data.json().results; })
+            .subscribe(function (result) {
+            for (var _i = 0, result_1 = result; _i < result_1.length; _i++) {
+                var val = result_1[_i];
+                val.likeEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */](),
+                    val.destroyEvent = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["v" /* EventEmitter */](),
+                    _this.cards.push(val);
+            }
+        });
+    };
+    HomePage.prototype.maintainCardBuffer = function () {
+        // Remove 0th element
+        this.cards.shift();
+        console.log(this.cards.length);
+        console.log(this.cards);
+        // Add 5 more cards to keep the number of cards 10 again
+        if (this.cards.length == 5) {
+            this.addNewCards(5);
+        }
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\xampp\htdocs\github\Ginder\src\pages\home\home.html"*/'<ion-content padding  class="no-scroll">\n\n  <div class="left-panel">\n\n    <div class="card-container">\n\n        <sc-card\n\n          *ngFor="let card of cards;let i = index;"\n\n          [callDestroy]="card.destroyEvent"\n\n          [orientation]="orientation"\n\n          (onRelease)="onRelease($event)"\n\n          (onSwipe)="onSwipe($event)"\n\n          (onAbort)="onAbort($event)"\n\n          [tinder-card]="overlay"\n\n          [callLike]="card.likeEvent"\n\n          (onLike)="onCardLike($event)">\n\n          <div class="card-header">\n\n            <span>{{card.id}}</span>\n\n          </div>\n\n          <div class="card-content">\n\n            <img [src]="card.url" draggable="false"/>\n\n          </div>\n\n        </sc-card>\n\n    </div>\n\n    <div class="buttons">\n\n      <button (click)="like(false)">Dislike</button>\n\n      <button (click)="like(true)">Like</button>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\xampp\htdocs\github\Ginder\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\xampp\htdocs\github\Ginder\src\pages\home\home.html"*/'<ion-content padding  class="no-scroll">\n\n  <div class="left-panel">\n\n    <div class="card-container">\n\n        <sc-card\n\n          *ngFor="let card of cards;let i = index;"\n\n          [callDestroy]="card.destroyEvent"\n\n          [orientation]="orientation"\n\n          (onRelease)="onRelease($event)"\n\n          (onSwipe)="onSwipe($event)"\n\n          (onAbort)="onAbort($event)"\n\n          [tinder-card]="overlay"\n\n          [callLike]="card.likeEvent"\n\n          (onLike)="onCardLike($event)">\n\n          <div class="card-header">\n\n            <span>{{ card.name.first }} {{ card.name.last}}</span>\n\n          </div>\n\n          <div class="card-content">\n\n            <img [src]="card.picture.large" draggable="false"/>\n\n          </div>\n\n        </sc-card>\n\n    </div>\n\n    <div class="buttons">\n\n      <button (click)="like(false)">Dislike</button>\n\n      <button (click)="like(true)">Like</button>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\xampp\htdocs\github\Ginder\src\pages\home\home.html"*/
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object])
     ], HomePage);
     return HomePage;
+    var _a;
 }());
 
 //# sourceMappingURL=home.js.map
@@ -338,8 +371,8 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(392);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(253);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_tabs_tabs__ = __webpack_require__(252);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_profile_profile__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_chats_chats__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_profile_profile__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_chats_chats__ = __webpack_require__(148);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__angular_http__ = __webpack_require__(674);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11_ng2_swipe_cards__ = __webpack_require__(675);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -378,13 +411,13 @@ var AppModule = (function () {
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
                 //For swipe cards
-                __WEBPACK_IMPORTED_MODULE_10__angular_http__["a" /* HttpModule */],
+                __WEBPACK_IMPORTED_MODULE_10__angular_http__["b" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_11_ng2_swipe_cards__["a" /* SwipeCardsModule */],
                 ///For swipe cards
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_5__app_component__["a" /* MyApp */], { tabsPlacement: "top" }, {
                     links: [
-                        { loadChildren: '../pages/chats/chats.module#ChatsPageModule', name: 'ChatsPage', segment: 'chats', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/profile/profile.module#ProfilePageModule', name: 'ProfilePage', segment: 'profile', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/chats/chats.module#ChatsPageModule', name: 'ChatsPage', segment: 'chats', priority: 'low', defaultHistory: [] }
                     ]
                 }),
             ],

@@ -34,17 +34,19 @@ export class HomePage {
       }
   };
 
-  constructor() {
-      for (var i = 0; i < 50; i++) {
-          this.cards.push({
-              id: i + 1,
-              likeEvent: new EventEmitter(),
-              destroyEvent: new EventEmitter(),
-              url: this.getKittenUrl()
-          });
-      }
+  constructor(private http: Http) {
+    this.addNewCards(10);
+      // for (var i = 0; i < 3; i++) {
+      //     this.cards.push({
+      //         id: i + 1,
+      //         likeEvent: new EventEmitter(),
+      //         destroyEvent: new EventEmitter(),
+      //         url: this.getKittenUrl()
+      //     });
+      // }
   }
 
+  //Called on pressing like/dislike icons each time
   like(like) {
       var self = this;
       if (this.cards.length > 0) {
@@ -60,6 +62,7 @@ export class HomePage {
             console.log('You disliked '+this.simpleStringify(item));
           }
       }
+      this.maintainCardBuffer();
   }
 
   simpleStringify (object){
@@ -81,17 +84,18 @@ export class HomePage {
         return JSON.stringify(simpleObject); // returns cleaned up JSON
   };
 
+  //Called on swiping cards each time
   onCardLike(event) {
       var item = this.cards[this.cardCursor++];
       // DO STUFF WITH YOUR CARD
-    //   console.log('You swiped '+this.simpleStringify(item));
-    //   console.log(event.like);
+      console.log('You swiped '+this.simpleStringify(item));
+      // console.log(event.like);
       if(event.like){
         console.log('You liked '+this.simpleStringify(item));
       }else{
         console.log('You disliked '+this.simpleStringify(item));
       }
-
+      this.maintainCardBuffer();
   }
 
   getKittenUrl() {
@@ -112,9 +116,32 @@ export class HomePage {
 
   }
 
-  scrollToBottom(el) {
-      setTimeout(() => {
-          el.nativeElement.scrollTop = el.nativeElement.scrollHeight;
-      }, 100);
+  // scrollToBottom(el) {
+  //     setTimeout(() => {
+  //         el.nativeElement.scrollTop = el.nativeElement.scrollHeight;
+  //     }, 100);
+  // }
+
+  addNewCards(count: number){
+    this.http.get('https://randomuser.me/api/?results='+count)
+    .map(data=>data.json().results)
+    .subscribe(result=>{
+      for(let val of result){
+          val.likeEvent = new EventEmitter(),
+          val.destroyEvent= new EventEmitter(),
+          this.cards.push(val);
+      }
+    })
+  }
+
+  maintainCardBuffer(){
+    // Remove 0th element
+    this.cards.shift();
+    console.log(this.cards.length);
+    console.log(this.cards);
+    // Add 5 more cards to keep the number of cards 10 again
+    if(this.cards.length==5){
+      this.addNewCards(5);
+    }
   }
 }

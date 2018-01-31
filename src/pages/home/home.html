@@ -12,10 +12,10 @@
           [callLike]="card.likeEvent"
           (onLike)="onCardLike($event)">
           <div class="card-header">
-            <span>{{card.id}}</span>
+            <span>{{ card.name.first }} {{ card.name.last}}</span>
           </div>
           <div class="card-content">
-            <img [src]="card.url" draggable="false"/>
+            <img [src]="card.picture.large" draggable="false"/>
           </div>
         </sc-card>
     </div>
