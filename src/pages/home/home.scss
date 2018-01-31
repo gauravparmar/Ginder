@@ -55,14 +55,14 @@ page-home {
   input[type="reset"],
   input[type="button"],
   button {
-      // background-color: #f0f0f0;
-      // border: 1px solid rgb(0, 0, 0);
-      // border: 1px solid rgba(0, 0, 0, 0.1);
-      // border-radius: 0.25em;
-      // height: 2.5em;
-      // line-height: 2.5;
-      // margin: 0.25em;
-      // padding: 0 1em;
+      background-color: #f0f0f0;
+      border: 1px solid rgb(0, 0, 0);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 0.25em;
+      height: 2.5em;
+      line-height: 2.5;
+      margin: 0.25em;
+      padding: 0 1em;
       width: 14em;
       font-size: 5rem;
   }
@@ -145,8 +145,8 @@ page-home {
   }
 
   .buttons {
-    // width:100%;
-    // margin-top: 30px;
+    width:100%;
+    margin-top: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -154,9 +154,9 @@ page-home {
   }
 
   .buttons button {
-    // background-color: #E1E1E1;
-    // max-width:160px;
-    // width:50%;
+    background-color: #E1E1E1;
+    max-width:160px;
+    width:50%;
   }
 
   .log-container {

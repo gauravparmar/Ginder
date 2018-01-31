@@ -35,7 +35,7 @@ export class HomePage {
   };
 
   constructor(private http: Http) {
-    this.addNewCards(3);
+    this.addNewCards(10);
       // for (var i = 0; i < 3; i++) {
       //     this.cards.push({
       //         id: i + 1,
@@ -52,7 +52,7 @@ export class HomePage {
       if (this.cards.length > 0) {
           console.log(this.cards);
           console.log('Cursor : '+this.cardCursor);
-          var item =self.cards[this.cardCursor++];
+          var item =self.cards[0];
           if(item){
             console.log('like Item '+this.simpleStringify(item));
             item.likeEvent.emit({ like });
@@ -147,8 +147,8 @@ export class HomePage {
     // console.log(this.cards.length);
     // console.log(this.cards);
     // Add 5 more cards to keep the number of cards 10 again
-    // if(this.cards.length==3){
-      this.addNewCards(1);
-    // }
+    if(this.cards.length==5){
+      this.addNewCards(5);
+    }
   }
 }

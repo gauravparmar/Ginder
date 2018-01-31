@@ -231,7 +231,7 @@ var HomePage = (function () {
                 backgroundColor: '#e92828'
             }
         };
-        this.addNewCards(3);
+        this.addNewCards(10);
         // for (var i = 0; i < 3; i++) {
         //     this.cards.push({
         //         id: i + 1,
@@ -247,7 +247,7 @@ var HomePage = (function () {
         if (this.cards.length > 0) {
             console.log(this.cards);
             console.log('Cursor : ' + this.cardCursor);
-            var item = self.cards[this.cardCursor++];
+            var item = self.cards[0];
             if (item) {
                 console.log('like Item ' + this.simpleStringify(item));
                 item.likeEvent.emit({ like: like });
@@ -331,13 +331,13 @@ var HomePage = (function () {
         // console.log(this.cards.length);
         // console.log(this.cards);
         // Add 5 more cards to keep the number of cards 10 again
-        // if(this.cards.length==3){
-        this.addNewCards(1);
-        // }
+        if (this.cards.length == 5) {
+            this.addNewCards(5);
+        }
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\xampp\htdocs\github\Ginder\src\pages\home\home.html"*/'<ion-content padding  class="no-scroll">\n\n  <div class="left-panel">\n\n    <div class="card-container">\n\n        <sc-card\n\n          *ngFor="let card of cards;let i = index;"\n\n          [callDestroy]="card.destroyEvent"\n\n          [orientation]="orientation"\n\n          (onRelease)="onRelease($event)"\n\n          (onSwipe)="onSwipe($event)"\n\n          (onAbort)="onAbort($event)"\n\n          [tinder-card]="overlay"\n\n          [callLike]="card.likeEvent"\n\n          (onLike)="onCardLike($event)">\n\n          <div class="card-header">\n\n\n\n          </div>\n\n          <div class="card-content">\n\n            <!-- <img *ngIf="card.picture.large" [src]="card.picture.large" draggable="false"/> -->\n\n            <img *ngIf="card.picture.large" src="https://blackopswiki.s3.amazonaws.com/uploads/article/avatar/207/large_avatar_default-user-icon.png" draggable="false"/>\n\n            <!-- <img *ngIf="card.picture.large" draggable="false" src="https://blackopswiki.s3.amazonaws.com/uploads/article/avatar/207/large_avatar_default-user-icon.png">   -->\n\n            <!-- <br> -->\n\n            <label class="user-name">{{ card.name.first }} {{ card.name.last}}</label>\n\n          </div>\n\n        </sc-card>\n\n    </div>\n\n    <div class="buttons">\n\n      <button><ion-icon name="close-circle" class="dislikeicon"  (click)="like(false)"></ion-icon></button>\n\n      <button ><ion-icon name="heart" class="likeicon" (click)="like(true)"></ion-icon></button>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\xampp\htdocs\github\Ginder\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\xampp\htdocs\github\Ginder\src\pages\home\home.html"*/'<ion-content padding  class="no-scroll">\n\n  <div class="left-panel">\n\n    <div class="card-container">\n\n        <sc-card\n\n          *ngFor="let card of cards;let i = index;"\n\n          [callDestroy]="card.destroyEvent"\n\n          [orientation]="orientation"\n\n          (onRelease)="onRelease($event)"\n\n          (onSwipe)="onSwipe($event)"\n\n          (onAbort)="onAbort($event)"\n\n          [tinder-card]="overlay"\n\n          [callLike]="card.likeEvent"\n\n          (onLike)="onCardLike($event)">\n\n          <div class="card-header">\n\n\n\n          </div>\n\n          <div class="card-content">\n\n            <!-- <img *ngIf="card.picture.large" [src]="card.picture.large" draggable="false"/> -->\n\n            <img *ngIf="card.picture.large" src="https://blackopswiki.s3.amazonaws.com/uploads/article/avatar/207/large_avatar_default-user-icon.png" draggable="false"/>\n\n            <!-- <img *ngIf="card.picture.large" draggable="false" src="https://blackopswiki.s3.amazonaws.com/uploads/article/avatar/207/large_avatar_default-user-icon.png">   -->\n\n            <!-- <br> -->\n\n            <label class="user-name">{{ card.name.first }} {{ card.name.last}}</label>\n\n          </div>\n\n        </sc-card>\n\n    </div>\n\n    <div class="buttons">\n\n      <button (click)="like(false)"><ion-icon name="close-circle" class="dislikeicon"  ></ion-icon></button>\n\n      <button (click)="like(true)"><ion-icon name="heart" class="likeicon"></ion-icon></button>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\xampp\htdocs\github\Ginder\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Http */]) === "function" && _a || Object])
     ], HomePage);
