@@ -227,8 +227,6 @@ var HomePage = (function () {
                 backgroundColor: '#e92828'
             }
         };
-        this.cardLogs = [];
-        this.tinderCardLogs = [];
         for (var i = 0; i < 50; i++) {
             this.cards.push({
                 id: i + 1,
@@ -253,8 +251,6 @@ var HomePage = (function () {
             else {
                 console.log('You disliked ' + this.simpleStringify(item));
             }
-            this.tinderCardLogs.push("callLike(" + JSON.stringify({ like: like }) + ")");
-            this.scrollToBottom(this.tinderCardLogContainer);
         }
     };
     HomePage.prototype.simpleStringify = function (object) {
@@ -285,8 +281,6 @@ var HomePage = (function () {
         else {
             console.log('You disliked ' + this.simpleStringify(item));
         }
-        this.tinderCardLogs.push("onLike(" + JSON.stringify(event) + ")");
-        this.scrollToBottom(this.tinderCardLogContainer);
     };
     HomePage.prototype.getKittenUrl = function () {
         var w = 500 - Math.floor((Math.random() * 100) + 1);
@@ -294,33 +288,19 @@ var HomePage = (function () {
         return "http://placekitten.com/" + w + "/" + h;
     };
     HomePage.prototype.onRelease = function (event) {
-        this.cardLogs.push("onRelease(event)");
-        this.scrollToBottom(this.cardLogContainer);
     };
     HomePage.prototype.onAbort = function (event) {
-        this.cardLogs.push("onAbort(event)");
-        this.scrollToBottom(this.cardLogContainer);
     };
     HomePage.prototype.onSwipe = function (event) {
-        this.cardLogs.push("onSwipe(event)");
-        this.scrollToBottom(this.cardLogContainer);
     };
     HomePage.prototype.scrollToBottom = function (el) {
         setTimeout(function () {
             el.nativeElement.scrollTop = el.nativeElement.scrollHeight;
         }, 100);
     };
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])('cardLog'),
-        __metadata("design:type", Object)
-    ], HomePage.prototype, "cardLogContainer", void 0);
-    __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])('tinderCardLog'),
-        __metadata("design:type", Object)
-    ], HomePage.prototype, "tinderCardLogContainer", void 0);
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\xampp\htdocs\github\Ginder\src\pages\home\home.html"*/'<div class="left-panel">\n\n  <div class="card-container">\n\n      <sc-card\n\n        *ngFor="let card of cards;let i = index;"\n\n        [callDestroy]="card.destroyEvent"\n\n        [orientation]="orientation"\n\n        (onRelease)="onRelease($event)"\n\n        (onSwipe)="onSwipe($event)"\n\n        (onAbort)="onAbort($event)"\n\n        [tinder-card]="overlay"\n\n        [callLike]="card.likeEvent"\n\n        (onLike)="onCardLike($event)">\n\n        <div class="card-header">\n\n          <span>{{card.id}}</span>\n\n        </div>\n\n        <div class="card-content">\n\n          <img [src]="card.url" draggable="false"/>\n\n        </div>\n\n      </sc-card>\n\n  </div>\n\n  <div class="buttons">\n\n    <button (click)="like(false)">Dislike</button>\n\n    <button (click)="like(true)">Like</button>\n\n  </div>\n\n</div>\n\n<div class="right-panel">\n\n  <h2>Parameters</h2>\n\n  <h3>Card</h3>\n\n  <h4>orientation</h4>\n\n  <p>\n\n    <label>value</label>\n\n    <select name="orientation" [(ngModel)]="orientation">\n\n      <option>x</option>\n\n      <option>y</option>\n\n      <option>xy</option>\n\n    </select>\n\n  </p>\n\n  <h4>Event logs</h4>\n\n  <div class="log-container" #cardLog>\n\n    <span *ngFor="let log of cardLogs">{{log}}</span>\n\n  </div>\n\n  <h3>Tinder Card</h3>\n\n  <h4>overlay</h4>\n\n  <h5>like</h5>\n\n  <p>\n\n    <label>backgroundColor</label>\n\n    <input type="color" [(ngModel)]="overlay.like.backgroundColor" />\n\n  </p>\n\n  <h5>dislike</h5>\n\n  <p>\n\n    <label>backgroundColor</label>\n\n    <input type="color" [(ngModel)]="overlay.dislike.backgroundColor" />\n\n  </p>\n\n  <h4>Event logs</h4>\n\n  <div class="log-container" #tinderCardLog>\n\n    <span *ngFor="let log of tinderCardLogs">{{log}}</span>\n\n  </div>\n\n</div>\n\n'/*ion-inline-end:"C:\xampp\htdocs\github\Ginder\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\xampp\htdocs\github\Ginder\src\pages\home\home.html"*/'<ion-content padding  class="no-scroll">\n\n  <div class="left-panel">\n\n    <div class="card-container">\n\n        <sc-card\n\n          *ngFor="let card of cards;let i = index;"\n\n          [callDestroy]="card.destroyEvent"\n\n          [orientation]="orientation"\n\n          (onRelease)="onRelease($event)"\n\n          (onSwipe)="onSwipe($event)"\n\n          (onAbort)="onAbort($event)"\n\n          [tinder-card]="overlay"\n\n          [callLike]="card.likeEvent"\n\n          (onLike)="onCardLike($event)">\n\n          <div class="card-header">\n\n            <span>{{card.id}}</span>\n\n          </div>\n\n          <div class="card-content">\n\n            <img [src]="card.url" draggable="false"/>\n\n          </div>\n\n        </sc-card>\n\n    </div>\n\n    <div class="buttons">\n\n      <button (click)="like(false)">Dislike</button>\n\n      <button (click)="like(true)">Like</button>\n\n    </div>\n\n  </div>\n\n</ion-content>\n\n'/*ion-inline-end:"C:\xampp\htdocs\github\Ginder\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [])
     ], HomePage);

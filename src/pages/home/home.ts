@@ -15,12 +15,11 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'page-home',
-  templateUrl: 'home.html' 
+  templateUrl: 'home.html'
 })
 
 export class HomePage {
-  @ViewChild('cardLog') cardLogContainer: any;
-  @ViewChild('tinderCardLog') tinderCardLogContainer: any;
+
 
 
   cards: any[] = [];
@@ -35,10 +34,6 @@ export class HomePage {
       }
   };
 
-  cardLogs: any = [];
-  tinderCardLogs: any = [];
-
-
   constructor() {
       for (var i = 0; i < 50; i++) {
           this.cards.push({
@@ -49,7 +44,7 @@ export class HomePage {
           });
       }
   }
-  
+
   like(like) {
       var self = this;
       if (this.cards.length > 0) {
@@ -64,13 +59,12 @@ export class HomePage {
           }else{
             console.log('You disliked '+this.simpleStringify(item));
           }
-          this.tinderCardLogs.push("callLike(" + JSON.stringify({ like }) + ")");
-          this.scrollToBottom(this.tinderCardLogContainer);
       }
   }
 
   simpleStringify (object){
     var simpleObject = {};
+
     for (var prop in object ){
         if (!object.hasOwnProperty(prop)){
             continue;
@@ -82,9 +76,10 @@ export class HomePage {
             continue;
         }
         simpleObject[prop] = object[prop];
-    }
-    return JSON.stringify(simpleObject); // returns cleaned up JSON
-};
+        }
+
+        return JSON.stringify(simpleObject); // returns cleaned up JSON
+  };
 
   onCardLike(event) {
       var item = this.cards[this.cardCursor++];
@@ -96,8 +91,7 @@ export class HomePage {
       }else{
         console.log('You disliked '+this.simpleStringify(item));
       }
-      this.tinderCardLogs.push("onLike(" + JSON.stringify(event) + ")");
-      this.scrollToBottom(this.tinderCardLogContainer);
+
   }
 
   getKittenUrl() {
@@ -107,19 +101,15 @@ export class HomePage {
   }
 
   onRelease(event) {
-      this.cardLogs.push("onRelease(event)");
-      this.scrollToBottom(this.cardLogContainer);
 
   }
 
   onAbort(event) {
-      this.cardLogs.push("onAbort(event)");
-      this.scrollToBottom(this.cardLogContainer);
+
   }
 
   onSwipe(event) {
-      this.cardLogs.push("onSwipe(event)");
-      this.scrollToBottom(this.cardLogContainer);
+
   }
 
   scrollToBottom(el) {
