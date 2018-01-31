@@ -25780,15 +25780,8 @@ page-home input[type="submit"],
 page-home input[type="reset"],
 page-home input[type="button"],
 page-home button {
-  background-color: #f0f0f0;
-  border: 1px solid black;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 0.25em;
-  height: 2.5em;
-  line-height: 2.5;
-  margin: 0.25em;
-  padding: 0 1em;
   width: 14em;
+  font-size: 5rem;
 }
 
 page-home html, page-home body {
@@ -25889,30 +25882,11 @@ page-home .card-header span {
   justify-content: center;
 }
 
-page-home .card-content {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  height: 100%;
-}
-
 page-home .card-content img {
-  max-width: 90%;
-  max-height: 90%;
+  width: 100%;
 }
 
 page-home .buttons {
-  width: 100%;
-  margin-top: 30px;
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -25932,12 +25906,6 @@ page-home .buttons {
   flex-direction: row;
 }
 
-page-home .buttons button {
-  background-color: #E1E1E1;
-  max-width: 160px;
-  width: 50%;
-}
-
 page-home .log-container {
   margin: auto;
   width: 96%;
@@ -25949,4 +25917,9 @@ page-home .log-container {
 page-home .log-container span {
   display: block;
   width: 100%;
+}
+
+page-home .user-name {
+  font-size: 2rem;
+  padding-left: 1rem;
 }

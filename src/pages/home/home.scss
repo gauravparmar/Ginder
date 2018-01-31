@@ -1,5 +1,5 @@
 page-home {
-  
+
 
   [role="button"],
   input[type="submit"],
@@ -10,7 +10,7 @@ page-home {
          -moz-box-sizing: content-box;
               box-sizing: content-box;
   }
-  
+
   /* Reset `button` and button-style `input` default styles */
   input[type="submit"],
   input[type="reset"],
@@ -34,7 +34,7 @@ page-home {
       border: 0;
       padding: 0;
   }
-  
+
   /* Make `a` like a button */
   [role="button"] {
       color: inherit;
@@ -47,52 +47,53 @@ page-home {
          -moz-user-select: none;
           -ms-user-select: none;
   }
-  
-  
+
+
   /* Demo */
   [role="button"],
   input[type="submit"],
   input[type="reset"],
   input[type="button"],
   button {
-      background-color: #f0f0f0;
-      border: 1px solid rgb(0, 0, 0);
-      border: 1px solid rgba(0, 0, 0, 0.1);
-      border-radius: 0.25em;
-      height: 2.5em;
-      line-height: 2.5;
-      margin: 0.25em;
-      padding: 0 1em;
+      // background-color: #f0f0f0;
+      // border: 1px solid rgb(0, 0, 0);
+      // border: 1px solid rgba(0, 0, 0, 0.1);
+      // border-radius: 0.25em;
+      // height: 2.5em;
+      // line-height: 2.5;
+      // margin: 0.25em;
+      // padding: 0 1em;
       width: 14em;
+      font-size: 5rem;
   }
-  
+
   html, body {
       margin: 0;
       height: 100%;
       overflow: hidden;
   }
-  
+
   .footer {
     width: 100%;
     text-align: center;
     position: absolute;
     bottom: 20px;
   }
-  
+
   .left-panel {
     float:left;
     height:100%;
     width:100%;
     max-width:400px;
   }
-  
+
   .right-panel {
     float:left;
     height:100%;
     width:400px;
     overflow: auto;
   }
-  
+
   .card-container {
     margin:auto;
     display: flex;
@@ -103,7 +104,7 @@ page-home {
     width:80%;
     margin:10px auto;
   }
-  
+
   sc-card {
     display: flex;
     align-items: center;
@@ -112,7 +113,7 @@ page-home {
     max-height: 400px;
     max-width: 400px;
   }
-  
+
   .card-header span {
     position:absolute;
     top:5px;
@@ -128,35 +129,36 @@ page-home {
     align-items: center;
     justify-content: center;
   }
-  
+
   .card-content {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    // height: 100%;
+
   }
-  
+
   .card-content img {
-    max-width:90%;
-    max-height:90%;
+    // max-width:90%;
+    // max-height:90%;
+    width: 100%;
   }
-  
+
   .buttons {
-    width:100%;
-    margin-top: 30px;
+    // width:100%;
+    // margin-top: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: row;;
+    flex-direction: row;
   }
-  
+
   .buttons button {
-    background-color: #E1E1E1;
-    max-width:160px;
-    width:50%;
+    // background-color: #E1E1E1;
+    // max-width:160px;
+    // width:50%;
   }
-  
+
   .log-container {
     margin:auto;
     width:96%;
@@ -164,10 +166,15 @@ page-home {
     border: 1px solid black;
     overflow-y: scroll;
   }
-  
+
   .log-container span {
     display:block;
     width:100%;
   }
-  
+
+  .user-name{
+    font-size: 2rem;
+    padding-left: 1rem;
+  }
+
 }

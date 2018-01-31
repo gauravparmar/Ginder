@@ -12,16 +12,20 @@
           [callLike]="card.likeEvent"
           (onLike)="onCardLike($event)">
           <div class="card-header">
-            <span>{{ card.name.first }} {{ card.name.last}}</span>
+
           </div>
           <div class="card-content">
-            <img [src]="card.picture.large" draggable="false"/>
+            <!-- <img *ngIf="card.picture.large" [src]="card.picture.large" draggable="false"/> -->
+            <img *ngIf="card.picture.large" src="https://blackopswiki.s3.amazonaws.com/uploads/article/avatar/207/large_avatar_default-user-icon.png" draggable="false"/>
+            <!-- <img *ngIf="card.picture.large" draggable="false" src="https://blackopswiki.s3.amazonaws.com/uploads/article/avatar/207/large_avatar_default-user-icon.png">   -->
+            <!-- <br> -->
+            <label class="user-name">{{ card.name.first }} {{ card.name.last}}</label>
           </div>
         </sc-card>
     </div>
     <div class="buttons">
-      <button (click)="like(false)">Dislike</button>
-      <button (click)="like(true)">Like</button>
+      <button><ion-icon name="close-circle" class="dislikeicon"  (click)="like(false)"></ion-icon></button>
+      <button ><ion-icon name="heart" class="likeicon" (click)="like(true)"></ion-icon></button>
     </div>
   </div>
 </ion-content>

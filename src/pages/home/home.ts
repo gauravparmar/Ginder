@@ -35,7 +35,7 @@ export class HomePage {
   };
 
   constructor(private http: Http) {
-    this.addNewCards(10);
+    this.addNewCards(3);
       // for (var i = 0; i < 3; i++) {
       //     this.cards.push({
       //         id: i + 1,
@@ -50,19 +50,26 @@ export class HomePage {
   like(like) {
       var self = this;
       if (this.cards.length > 0) {
+          console.log(this.cards);
+          console.log('Cursor : '+this.cardCursor);
           var item =self.cards[this.cardCursor++];
-          item.likeEvent.emit({ like });
-          // DO STUFF WITH YOUR CARD
-        //   var item = this.cards[this.cardCursor-1];
-        //   console.log('You clicked '+this.simpleStringify(item));
-        //   console.log(like);
-          if(like){
-            console.log('You liked '+this.simpleStringify(item));
-          }else{
-            console.log('You disliked '+this.simpleStringify(item));
+          if(item){
+            console.log('like Item '+this.simpleStringify(item));
+            item.likeEvent.emit({ like });
+            // DO STUFF WITH YOUR CARD
+          //   var item = this.cards[this.cardCursor-1];
+          //   console.log('You clicked '+this.simpleStringify(item));
+          //   console.log(like);
+            if(like){
+              console.log('You liked '+this.simpleStringify(item));
+            }else{
+              console.log('You disliked '+this.simpleStringify(item));
+            }
+            this.maintainCardBuffer();
           }
+
       }
-      this.maintainCardBuffer();
+
   }
 
   simpleStringify (object){
@@ -137,11 +144,11 @@ export class HomePage {
   maintainCardBuffer(){
     // Remove 0th element
     this.cards.shift();
-    console.log(this.cards.length);
-    console.log(this.cards);
+    // console.log(this.cards.length);
+    // console.log(this.cards);
     // Add 5 more cards to keep the number of cards 10 again
-    if(this.cards.length==5){
-      this.addNewCards(5);
-    }
+    // if(this.cards.length==3){
+      this.addNewCards(1);
+    // }
   }
 }
